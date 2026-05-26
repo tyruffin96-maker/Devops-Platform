@@ -110,7 +110,7 @@ resource "aws_route_table_association" "private" {
 }
 
 module "monitoring" {
-  source       = "./modules/monitoring"
+  source       = "source = "./monitoring"
   project_name = var.project_name
   instance_id  = module.ec2.instance_id   # adjust to match your ec2 output name
   alert_email  = var.alert_email
