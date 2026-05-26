@@ -21,3 +21,8 @@ variable "ecr_repository_url" {
   type    = string
   default = ""
 }
+
+variable "alert_email" {
+  description = "Email for CloudWatch alarm notifications"
+  type        = string
+}
