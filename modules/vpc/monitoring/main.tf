@@ -1,4 +1,3 @@
-cat > modules/vpc/monitoring/main.tf << 'EOF'
 # SNS Topic for alerts
 resource "aws_sns_topic" "ec2_alerts" {
   name = "${var.project_name}-ec2-alerts"
@@ -92,4 +91,3 @@ resource "aws_cloudwatch_dashboard" "ec2_health" {
     ]
   })
 }
-EOF
