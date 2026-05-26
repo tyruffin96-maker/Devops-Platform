@@ -41,12 +41,6 @@ module "ec2" {
   ecr_repository_url = var.ecr_repository_url
 }
 
-module "monitoring" {
-  source       = "../../monitoring"
-  project_name = var.project_name
-  instance_id  = module.ec2.instance_id
-  alert_email  = var.alert_email
-}
 
 output "bastion_ip" { value = module.ec2.bastion_public_ip }
 output "app_ip"     { value = module.ec2.app_private_ip }
