@@ -108,3 +108,10 @@ resource "aws_route_table_association" "private" {
   subnet_id      = aws_subnet.private[count.index].id
   route_table_id = aws_route_table.private.id
 }
+
+module "monitoring" {
+  source       = "./modules/monitoring"
+  project_name = var.project_name
+  instance_id  = module.ec2.instance_id   # adjust to match your ec2 output name
+  alert_email  = var.alert_email
+}
