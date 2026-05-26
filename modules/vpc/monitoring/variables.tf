@@ -12,3 +12,8 @@ variable "alert_email" {
   description = "Email address for alarm notifications"
   type        = string
 }
+
+variable "aws_region" {
+  description = "AWS region"
+  type        = string
+}

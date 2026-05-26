@@ -51,3 +51,11 @@ module "monitoring" {
 output "bastion_ip" { value = module.ec2.bastion_public_ip }
 output "app_ip"     { value = module.ec2.app_private_ip }
 output "jenkins_ip" { value = module.ec2.jenkins_private_ip }
+
+module "monitoring" {
+  source       = "../../monitoring"
+  project_name = var.project_name
+  instance_id  = module.ec2.instance_id
+  alert_email  = var.alert_email
+  aws_region   = var.aws_region
+}
